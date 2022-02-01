@@ -1,0 +1,9 @@
+[workspace]
+members=[
+  "token-vault/program",
+  "token-metadata/program",
+  "nft-candy-machine/program",
+]
+exclude = [
+  "membership-token/cli"
+]

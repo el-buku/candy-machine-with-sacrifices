@@ -1,0 +1,25 @@
+{
+  "acceptsSacrifices":true,
+  "sacrificedTokenSymbol":"LDTG1",
+  "price": 0.01,
+  "number": null,
+  "gatekeeper":null,
+  "solTreasuryAccount": null,
+  "splTokenAccount": null,
+  "splToken": null,
+  "goLiveDate": 1643737968148,
+  "endSettings": {
+    "endSettingType":{
+      "amount":true
+    },
+    "value":0
+  },
+  "whitelistMintSettings": null,
+  "hiddenSettings": null,
+  "storage": "arweave",
+  "ipfsInfuraProjectId": null,
+  "ipfsInfuraSecret": null,
+  "awsS3Bucket": null,
+  "noRetainAuthority": false,
+  "noMutable": false
+}
