@@ -25,7 +25,7 @@ export const MintButton = ({
   isMinting,
   disabled = false,
 }: {
-  onMint: () => Promise<void>;
+  onMint: () => void;
   candyMachine?: CandyMachineAccount;
   isMinting: boolean;
   disabled?: boolean;

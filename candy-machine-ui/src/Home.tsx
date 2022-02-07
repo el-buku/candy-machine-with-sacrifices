@@ -150,7 +150,7 @@ const Home = (props: HomeProps) => {
     }
   }, [anchorWallet, props.candyMachineId, props.connection]);
 
-  const onMint = async () => {
+  const onMint = useCallback(async () => {
     if (accepted) {
       try {
         setIsUserMinting(true);
@@ -224,11 +224,8 @@ const Home = (props: HomeProps) => {
       } finally {
         setIsUserMinting(false);
       }
-    } else {
-      setAccepted(true);
-      handleOpen();
     }
-  };
+  }, [accepted, anchorWallet, candyMachine, props, wallet, selectedNfts]);
 
   useEffect(() => {
     refreshCandyMachineState();
@@ -305,7 +302,7 @@ const Home = (props: HomeProps) => {
                       <MintButton
                         candyMachine={candyMachine}
                         isMinting={isUserMinting}
-                        onMint={onMint}
+                        onMint={handleOpen}
                         disabled={selectedNfts.length < 2 ? true : false}
                       />
                     </GatewayProvider>
@@ -313,7 +310,7 @@ const Home = (props: HomeProps) => {
                     <MintButton
                       candyMachine={candyMachine}
                       isMinting={isUserMinting}
-                      onMint={onMint}
+                      onMint={handleOpen}
                       disabled={selectedNfts.length < 2 ? true : false}
                     />
                   )}
@@ -349,7 +346,7 @@ const Home = (props: HomeProps) => {
             <div style={{ display: "flex", justifyContent: "space-around" }}>
               <CTAButton
                 onClick={() => {
-                  handleClose();
+                  setAccepted(true);
                   onMint();
                 }}
                 style={{ maxWidth: "45%" }}
